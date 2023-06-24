@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Currency_Exchange</title>
+  </head>
+  <body>
+    <header class="header">Currency Exchange</header>
+    <div class="container">
+      <input
+        type="text"
+        class="form-control"
+        id="currency_one"
+        list="list_one"
+        placeholder="exchange rate"
+      />
+      <input
+        type="text"
+        class="form-control"
+        id="currency_two"
+        list="list_two"
+        placeholder="exchange rate"
+      />
+      <input
+        type="number"
+        id="amount"
+        class="from-control container"
+        placeholder="quantity"
+      />
+      <button id="calculate">Calculate</button>
+      <datalist id="list_two"></datalist>
+      <datalist id="list_one"></datalist>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
