@@ -9,6 +9,7 @@ const list_two = document.getElementById("list_two");
 const amount = document.getElementById("amount");
 const calculate = document.getElementById("calculate");
 const result = document.getElementById("result");
+const reset = document.querySelector(".reset");
 
 fetch(url + "/codes")
   .then((res) => res.json())
@@ -24,20 +25,28 @@ fetch(url + "/codes")
   });
 
 calculate.addEventListener("click", function () {
-  const doviz1 = currency_one.value;
-  const doviz2 = currency_two.value;
-  const miktar = amount.value;
+  const firstRate = currency_one.value;
+  const secondRate = currency_two.value;
+  const quantity = amount.value;
 
-  fetch(url + "/latest/" + doviz1)
+  fetch(url + "/latest/" + firstRate)
     .then((res) => res.json())
     .then((data) => {
-      const sonuc = (data.conversion_rates[doviz2] * miktar).toFixed(3);
+      result.style.display = "flex";
+      const sonuc = (data.conversion_rates[secondRate] * quantity).toFixed(3);
       result.innerHTML = `
                 <div class="card border-primary">
                     <div class="card-body text-center" style="font-size:30px;" >
-                        ${miktar} ${doviz1} = ${sonuc} ${doviz2}
+                        ${quantity} ${firstRate} = ${sonuc} ${secondRate}
                     </div>
                 </div>
             `;
     });
+});
+
+reset.addEventListener("click", () => {
+  currency_one.value = null;
+  currency_two.value = null;
+  amount.value = null;
+  result.style.display = "none";
 });

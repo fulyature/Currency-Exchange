@@ -27,12 +27,17 @@
       <input
         type="number"
         id="amount"
-        class="from-control container"
+        class="from-control"
         placeholder="quantity"
       />
-      <button id="calculate">Calculate</button>
+      <div class="btn-wrapper">
+        <button id="calculate">Calculate</button>
+        <button class="reset" id="calculate">Reset</button>
+      </div>
+
       <datalist id="list_two"></datalist>
       <datalist id="list_one"></datalist>
+      <div id="result"></div>
     </div>
     <script src="app.js"></script>
   </body>
