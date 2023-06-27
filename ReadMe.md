@@ -1,0 +1,7 @@
+# used stack
+
+1. HTML
+2. CSS
+3. VANİLLAJS
+4. DOM MANIPULATION
+5. Fetch API
